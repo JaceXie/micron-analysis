@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美光科技 深度分析 — 巴菲特神谕分析师</title>
+<meta name="description" content="融合巴菲特投资哲学与现代多维分析框架的美光科技（MU, NASDAQ）深度分析报告">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   Morandi Palette — Light & Dark Themes
+   ═══════════════════════════════════════ */
+
+:root {
+  /* ── Light Theme (Morandi warm) ── */
+  --bg: #F2EDE8;
+  --bg-alt: #EBE4DD;
+  --surface: #FFFFFF;
+  --surface-hover: #F9F6F3;
+  --border: #D8CFCA;
+  --border-accent: #C4A882;
+  --text: #4A433E;
+  --text-secondary: #7A726B;
+  --text-dim: #A09890;
+  --heading: #3A3330;
+
+  /* Morandi Accents */
+  --morandi-rose: #C9A9A0;
+  --morandi-sage: #A3B0A0;
+  --morandi-sand: #C4A882;
+  --morandi-blue: #9EB0BC;
+  --morandi-mauve: #B0A0B0;
+  --morandi-clay: #BEA898;
+  --morandi-olive: #A0A890;
+  --morandi-stone: #B0AAA0;
+
+  --accent: #8B7355;
+  --accent-light: rgba(139, 115, 85, 0.08);
+  --accent-border: rgba(139, 115, 85, 0.2);
+
+  /* Semantic */
+  --green: #7A9E7E;
+  --green-bg: rgba(122,158,126,0.1);
+  --red: #BF7B6E;
+  --red-bg: rgba(191,123,110,0.1);
+  --yellow: #C4A060;
+  --yellow-bg: rgba(196,160,96,0.1);
+  --blue: #7E9BB0;
+  --blue-bg: rgba(126,155,176,0.1);
+
+  /* Table */
+  --table-header-bg: #EDE7E1;
+  --table-stripe: rgba(0,0,0,0.02);
+  --table-hover: rgba(139,115,85,0.06);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(74,67,62,0.06);
+  --shadow-md: 0 4px 12px rgba(74,67,62,0.08);
+  --shadow-lg: 0 8px 32px rgba(74,67,62,0.1);
+
+  /* Badge */
+  --badge-buy-bg: rgba(122,158,126,0.15);
+  --badge-buy-text: #5A7E5E;
+  --badge-sell-bg: rgba(191,123,110,0.15);
+  --badge-sell-text: #9E5A4E;
+  --badge-hold-bg: rgba(196,160,96,0.15);
+  --badge-hold-text: #8E7030;
+
+  /* Layout */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --content-width: 900px;
+  --sidebar-width: 260px;
+}
+
+[data-theme="dark"] {
+  --bg: #262320;
+  --bg-alt: #2E2A27;
+  --surface: #33302D;
+  --surface-hover: #3B3734;
+  --border: #4A4540;
+  --border-accent: #8B7355;
+  --text: #E0D8D0;
+  --text-secondary: #B0A89E;
+  --text-dim: #807870;
+  --heading: #F0E8E0;
+
+  --accent: #C4A882;
+  --accent-light: rgba(196,168,130,0.1);
+  --accent-border: rgba(196,168,130,0.25);
+
+  --morandi-rose: #C9A9A0;
+  --morandi-sage: #8EA088;
+  --morandi-sand: #C4A882;
+  --morandi-blue: #8AA0B0;
+  --morandi-mauve: #A090A0;
+
+  --green: #8EB892;
+  --green-bg: rgba(142,184,146,0.12);
+  --red: #D08878;
+  --red-bg: rgba(208,136,120,0.12);
+  --yellow: #D4B070;
+  --yellow-bg: rgba(212,176,112,0.12);
+  --blue: #8EAEC0;
+  --blue-bg: rgba(142,174,192,0.12);
+
+  --table-header-bg: #3B3734;
+  --table-stripe: rgba(255,255,255,0.02);
+  --table-hover: rgba(196,168,130,0.08);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.25);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+
+  --badge-buy-bg: rgba(142,184,146,0.18);
+  --badge-buy-text: #8EB892;
+  --badge-sell-bg: rgba(208,136,120,0.18);
+  --badge-sell-text: #D08878;
+  --badge-hold-bg: rgba(212,176,112,0.18);
+  --badge-hold-text: #D4B070;
+}
+
+/* ═══════════════════════════════
+   Base Reset & Typography
+   ═══════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+/* ═══════════════════════════════
+   Top Navigation Bar
+   ═══════════════════════════════ */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.4s, border-color 0.3s;
+}
+
+[data-theme="light"] .topbar { background: rgba(255,255,255,0.9); }
+[data-theme="dark"] .topbar { background: rgba(51,48,45,0.9); }
+
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.topbar-brand .logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--morandi-sand), var(--morandi-rose));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-meta {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-right: 12px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.25s;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ═══════════════════════════════
+   Layout: Sidebar + Content
+   ═══════════════════════════════ */
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 2rem 4rem;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  position: sticky;
+  top: 72px;
+  height: calc(100vh - 88px);
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+.sidebar::-webkit-scrollbar { width: 3px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.sidebar-nav { list-style: none; }
+
+.sidebar-nav li {
+  margin-bottom: 2px;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+  line-height: 1.5;
+}
+
+.sidebar-nav a:hover {
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.sidebar-nav a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-light);
+  font-weight: 500;
+}
+
+.sidebar-nav .nav-group {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  padding: 16px 12px 6px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  max-width: var(--content-width);
+}
+
+/* ═══════════════════════════════
+   Hero Section
+   ═══════════════════════════════ */
+
+.hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--morandi-sand), var(--morandi-rose), var(--morandi-sage), var(--morandi-blue));
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--heading);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat .label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.hero-stat .value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.hero-stat .change {
+  font-size: 0.72rem;
+  margin-top: 2px;
+}
+
+.change.up { color: var(--green); }
+.change.down { color: var(--red); }
+
+/* ═══════════════════════════════
+   Verdict Card
+   ═══════════════════════════════ */
+
+.verdict {
+  background: linear-gradient(135deg, var(--surface), var(--bg-alt));
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.verdict::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--morandi-sand);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.verdict-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.verdict p {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.verdict strong {
+  color: var(--heading);
+}
+
+/* ═══════════════════════════════
+   Decision Summary Card
+   ═══════════════════════════════ */
+
+.decision-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--yellow);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+.decision-summary .ds-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+.decision-summary .ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.decision-summary .ds-item .ds-label {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.decision-summary .ds-item .ds-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-top: 2px;
+}
+.decision-summary .ds-item .ds-value.green { color: var(--green); }
+.decision-summary .ds-item .ds-value.yellow { color: var(--yellow); }
+.decision-summary .ds-scenarios {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ═══════════════════════════════
+   Module Sections
+   ═══════════════════════════════ */
+
+.module {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s;
+}
+
+.module:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.module-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.module-num.n1 { background: rgba(201,169,160,0.2); color: var(--morandi-rose); }
+.module-num.n2 { background: rgba(163,176,160,0.2); color: var(--morandi-sage); }
+.module-num.n3 { background: rgba(196,168,130,0.2); color: var(--morandi-sand); }
+.module-num.n4 { background: rgba(158,176,188,0.2); color: var(--morandi-blue); }
+.module-num.n5 { background: rgba(176,160,176,0.2); color: var(--morandi-mauve); }
+.module-num.n6 { background: rgba(190,168,152,0.2); color: var(--morandi-clay); }
+.module-num.n7 { background: rgba(201,169,160,0.2); color: var(--morandi-rose); }
+.module-num.n8 { background: rgba(163,176,160,0.2); color: var(--morandi-sage); }
+.module-num.n9 { background: rgba(196,168,130,0.2); color: var(--morandi-sand); }
+.module-num.n10 { background: rgba(158,176,188,0.2); color: var(--morandi-blue); }
+.module-num.n11 { background: rgba(191,123,110,0.15); color: var(--red); }
+.module-num.n12 { background: rgba(196,168,130,0.2); color: var(--morandi-sand); }
+
+.module h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.module h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.module h3:first-of-type {
+  margin-top: 0;
+}
+
+.module p, .module li {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.module ul, .module ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.module li {
+  margin-bottom: 0.3rem;
+}
+
+.module strong {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════
+   Tables
+   ═══════════════════════════════ */
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+thead {
+  background: var(--table-header-bg);
+}
+
+th {
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--heading);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--border);
+  font-size: 0.78rem;
+}
+
+td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+
+tr:nth-child(even) { background: var(--table-stripe); }
+tr:hover { background: var(--table-hover); }
+
+td:first-child { font-weight: 500; color: var(--heading); }
+
+/* Numeric cells */
+.num { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; text-align: right; }
+th.num { text-align: right; }
+
+/* ═══════════════════════════════
+   Special Elements
+   ═══════════════════════════════ */
+
+.callout {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  border-left: 3px solid;
+}
+
+.callout.info { background: var(--blue-bg); border-color: var(--blue); }
+.callout.success { background: var(--green-bg); border-color: var(--green); }
+.callout.warning { background: var(--yellow-bg); border-color: var(--yellow); }
+.callout.danger { background: var(--red-bg); border-color: var(--red); }
+
+.callout-title {
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 4px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge.buy { background: var(--badge-buy-bg); color: var(--badge-buy-text); }
+.badge.sell { background: var(--badge-sell-bg); color: var(--badge-sell-text); }
+.badge.hold { background: var(--badge-hold-bg); color: var(--badge-hold-text); }
+
+.rating-bar {
+  display: flex;
+  gap: 3px;
+  margin: 0.5rem 0;
+}
+
+.rating-bar .bar {
+  height: 6px;
+  border-radius: 3px;
+  flex: 1;
+  background: var(--border);
+  transition: background 0.3s;
+}
+
+.rating-bar .bar.filled { background: var(--morandi-sand); }
+
+.code-block {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin: 1rem 0;
+  color: var(--text);
+}
+
+.highlight-box {
+  background: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 1rem 0;
+}
+
+.highlight-box .hl-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Moat rating */
+.moat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.moat-item:last-child { border-bottom: none; }
+
+.moat-label { flex: 1; font-size: 0.85rem; font-weight: 500; color: var(--heading); }
+
+.moat-rating {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.moat-rating.wide { background: var(--green-bg); color: var(--green); }
+.moat-rating.narrow { background: var(--yellow-bg); color: var(--yellow); }
+.moat-rating.none { background: var(--red-bg); color: var(--red); }
+
+/* ═══════════════════════════════
+   Scorecard
+   ═══════════════════════════════ */
+
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 1rem 0;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  gap: 12px;
+}
+
+.score-row .criteria {
+  flex: 1;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.score-row .score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 42px;
+  text-align: center;
+}
+
+.score-row .dots {
+  display: flex;
+  gap: 4px;
+}
+
+.score-row .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.score-row .dot.filled { background: var(--morandi-sand); }
+
+/* Grade badge */
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.grade-badge.a { background: var(--green-bg); color: var(--green); border: 2px solid var(--green); }
+.grade-badge.b { background: var(--blue-bg); color: var(--blue); border: 2px solid var(--blue); }
+.grade-badge.c { background: var(--yellow-bg); color: var(--yellow); border: 2px solid var(--yellow); }
+
+/* ═══════════════════════════════
+   Decision Box
+   ═══════════════════════════════ */
+
+.decision-box {
+  background: var(--surface);
+  border: 2px solid var(--yellow);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.decision-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.decision-rating {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  background: var(--yellow-bg);
+  color: var(--yellow);
+}
+
+.decision-price {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.decision-price .current {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+.decision-price .target {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════
+   Disclaimer
+   ═══════════════════════════════ */
+
+.disclaimer {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.disclaimer strong { color: var(--text-secondary); }
+
+/* ═══════════════════════════════
+   Footer
+   ═══════════════════════════════ */
+
+.page-footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.page-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.page-footer a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════
+   Back to top
+   ═══════════════════════════════ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ═══════════════════════════════
+   Responsive
+   ═══════════════════════════════ */
+
+@media (max-width: 960px) {
+  .sidebar { display: none; }
+  .layout { padding: 72px 1.25rem 3rem; }
+  .hero, .module { padding: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .layout { padding: 64px 1rem 2rem; }
+  .hero { padding: 1.25rem; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .module { padding: 1.25rem; }
+  .topbar-meta { display: none; }
+  th, td { padding: 7px 10px; font-size: 0.75rem; }
+  .decision-summary .ds-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ═══════════════════════════════
+   Print
+   ═══════════════════════════════ */
+@media print {
+  .topbar, .sidebar, .theme-toggle, .back-to-top { display: none !important; }
+  .layout { padding: 0; }
+  .module { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ Top Bar ════════════ -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="#" class="topbar-brand">
+      <div class="logo">B</div>
+      <span>巴菲特神谕分析师</span>
+    </a>
+    <div class="topbar-actions">
+      <span class="topbar-meta">2026-04-08 | NASDAQ: MU</span>
+      <button class="theme-toggle" id="themeToggle" title="切换主题" aria-label="Toggle theme">
+        <span id="themeIcon">&#9790;</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════ Main Layout ════════════ -->
+<div class="layout">
+
+  <!-- ──── Sidebar ──── -->
+  <aside class="sidebar">
+    <ul class="sidebar-nav" id="sidebarNav">
+      <li class="nav-group">概览</li>
+      <li><a href="#verdict">巴菲特裁决</a></li>
+      <li><a href="#decision-summary">决策摘要</a></li>
+      <li><a href="#overview">公司概览</a></li>
+      <li class="nav-group">基本面</li>
+      <li><a href="#management">管理层评估</a></li>
+      <li><a href="#business">商业模式</a></li>
+      <li><a href="#moat">经济护城河</a></li>
+      <li><a href="#financials">财务分析</a></li>
+      <li><a href="#earningscall">电话会分析</a></li>
+      <li class="nav-group">估值与市场</li>
+      <li><a href="#valuation">多模型估值</a></li>
+      <li><a href="#competition">竞争分析</a></li>
+      <li><a href="#technical">技术面</a></li>
+      <li class="nav-group">风险与决策</li>
+      <li><a href="#catalysts">增长催化剂</a></li>
+      <li><a href="#risk">风险矩阵</a></li>
+      <li><a href="#scorecard">巴菲特计分卡</a></li>
+    </ul>
+  </aside>
+
+  <!-- ──── Content ──── -->
+  <main class="content">
+
+    <!-- ══ Hero ══ -->
+    <section class="hero" id="hero">
+      <div class="hero-badge">深度分析报告</div>
+      <h1>美光科技 Micron Technology</h1>
+      <p class="hero-subtitle">融合巴菲特投资哲学与现代多维分析框架的机构级深度研究</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="label">股价</div>
+          <div class="value">$377.58</div>
+          <div class="change down">52周: $61-$471</div>
+        </div>
+        <div class="hero-stat">
+          <div class="label">市值</div>
+          <div class="value">$4,130亿</div>
+        </div>
+        <div class="hero-stat">
+          <div class="label">PE (FY2025)</div>
+          <div class="value">~46x</div>
+          <div class="change down">周期高点</div>
+        </div>
+        <div class="hero-stat">
+          <div class="label">FY2025营收</div>
+          <div class="value">$374亿</div>
+          <div class="change up">+49% YoY</div>
+        </div>
+        <div class="hero-stat">
+          <div class="label">HBM营收</div>
+          <div class="value">~$80亿</div>
+          <div class="change up">从零到$80亿</div>
+        </div>
+        <div class="hero-stat">
+          <div class="label">评级</div>
+          <div class="value"><span class="badge hold" style="background:var(--badge-hold-bg);color:var(--badge-hold-text)">持有</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Verdict ══ -->
+    <section class="verdict" id="verdict">
+      <div class="verdict-title">巴菲特的裁决</div>
+      <p><strong>美光科技正站在AI存储革命的风口上——HBM（高带宽内存）从零增长到年化80亿美元营收，驱动公司从周期性谷底的年亏损翻转为$374亿营收和41%毛利率。</strong>但巴菲特会问一个根本性问题：这到底是一家周期性大宗商品公司穿上了AI的外衣，还是AI真的改变了存储行业的经济特性？股价从$61涨到$471又回落到$377——在过去45年里，存储行业的每一次"这次不一样"最终都证明了"每次都一样"。<strong>46倍PE买一个历史上ROE在-30%到+30%之间剧烈摆动的公司，巴菲特不会这么做。</strong></p>
+    </section>
+
+    <!-- ══ Decision Summary ══ -->
+    <section class="decision-summary" id="decision-summary">
+      <div class="ds-title">决策摘要 Decision Summary</div>
+      <div class="ds-grid">
+        <div class="ds-item">
+          <div class="ds-label">评级</div>
+          <div class="ds-value yellow"><span class="badge hold">持有</span></div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-label">计分</div>
+          <div class="ds-value">C 18/36</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-label">加权目标价</div>
+          <div class="ds-value">$450 <span style="font-size:0.78rem;font-weight:400">(+19%)</span></div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-label">首仓区间</div>
+          <div class="ds-value">$280-350</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-label">股息率</div>
+          <div class="ds-value">0.1%</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-label">安全边际</div>
+          <div class="ds-value">不确定</div>
+        </div>
+      </div>
+      <div class="ds-scenarios">12个月情景：乐观 $550 (25%) &middot; 基准 $450 (45%) &middot; 悲观 $200 (30%)</div>
+    </section>
+
+    <!-- ══ Module 1: Overview ══ -->
+    <section class="module" id="overview">
+      <div class="module-header">
+        <div class="module-num n1">01</div>
+        <h2>公司概览与背景</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            <tr><td>代码 / 交易所</td><td>MU / NASDAQ</td></tr>
+            <tr><td>市值</td><td class="num">$4,130亿</td></tr>
+            <tr><td>行业</td><td>存储半导体</td></tr>
+            <tr><td>成立时间</td><td>1978年（爱达荷州博伊西）</td></tr>
+            <tr><td>CEO</td><td>Sanjay Mehrotra（2017年至今）</td></tr>
+            <tr><td>52周价格区间</td><td class="num">$61 — $471</td></tr>
+            <tr><td>员工数</td><td class="num">~48,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>发展历程</h3>
+      <ul>
+        <li><strong>1978年</strong> — 在爱达荷州博伊西成立</li>
+        <li><strong>1998年</strong> — 收购德州仪器存储业务</li>
+        <li><strong>2013年</strong> — 收购尔必达（日本），跻身全球DRAM前三</li>
+        <li><strong>2023年</strong> — HBM3E开始量产，搭上AI快车</li>
+        <li><strong>FY2025</strong> — 营收$374亿（+49%），HBM从零到$80亿年化</li>
+        <li><strong>2026年</strong> — HBM4样品出货，竞争白热化</li>
+      </ul>
+
+      <h3>股权结构</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>股东类型</th><th class="num">持股比例</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>Vanguard</td><td class="num">~9%</td><td>最大机构股东</td></tr>
+            <tr><td>BlackRock</td><td class="num">~8%</td><td>第二大机构股东</td></tr>
+            <tr><td>State Street</td><td class="num">~5%</td><td>第三大机构股东</td></tr>
+            <tr><td>内部人持股</td><td class="num">&lt;1%</td><td>职业经理人模式</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ══ Module 2: Management ══ -->
+    <section class="module" id="management">
+      <div class="module-header">
+        <div class="module-num n2">02</div>
+        <h2>管理层评估</h2>
+      </div>
+
+      <p><strong>Sanjay Mehrotra</strong> — CEO（2017年至今），前SanDisk联合创始人兼CEO。将美光从周期谷底带到AI超级周期。</p>
+
+      <div class="table-wrapper" style="margin-top:1rem">
+        <table>
+          <thead><tr><th>维度</th><th>评估</th><th class="num">评分</th></tr></thead>
+          <tbody>
+            <tr><td>资本配置能力</td><td>$159亿capex激进但方向正确——AI需要产能</td><td class="num">B</td></tr>
+            <tr><td>坦诚程度</td><td>电话会非常详细透明</td><td class="num">A-</td></tr>
+            <tr><td>利益绑定</td><td>内部人持股&lt;1%，职业经理人</td><td class="num">C</td></tr>
+            <tr><td>历史记录</td><td>HBM战略押对了——从落后到追平SK Hynix</td><td class="num">A</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-title">管理层总评</div>
+        Mehrotra在战略方向上做对了——HBM押注成功，但$159亿capex的激进程度令人担忧。内部人持股不到1%是一个减分项。
+      </div>
+    </section>
+
+    <!-- ══ Module 3: Business Model ══ -->
+    <section class="module" id="business">
+      <div class="module-header">
+        <div class="module-num n3">03</div>
+        <h2>商业模式深度解析</h2>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hl-label">巴菲特的"一句话测试"</div>
+        <p><strong>美光造存储芯片（DRAM和NAND闪存），卖给手机厂、PC厂、云计算公司和AI数据中心。</strong></p>
+        <p style="margin-top:0.5rem;color:var(--green);font-size:0.82rem;font-weight:600">&#10003; 通过——但收入高度周期性。</p>
+      </div>
+
+      <h3>收入结构（FY2025，$亿）</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>业务</th><th class="num">收入</th><th class="num">占比</th><th class="num">增速</th></tr></thead>
+          <tbody>
+            <tr><td>DRAM</td><td class="num">285.7</td><td class="num">76%</td><td class="num" style="color:var(--green)">+62%</td></tr>
+            <tr><td>NAND</td><td class="num">85.0</td><td class="num">23%</td><td class="num" style="color:var(--green)">+18%</td></tr>
+            <tr><td>其他</td><td class="num">~3.1</td><td class="num">1%</td><td class="num">—</td></tr>
+            <tr><td><strong>合计</strong></td><td class="num"><strong>374</strong></td><td class="num"><strong>100%</strong></td><td class="num" style="color:var(--green)"><strong>+49%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>终端市场分布</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>终端市场</th><th class="num">收入($亿)</th><th class="num">占比</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>数据中心(Cloud+Core)</td><td class="num">207</td><td class="num">56%</td><td>HBM+服务器DRAM为核心</td></tr>
+            <tr><td>移动设备</td><td class="num">~80</td><td class="num">21%</td><td>—</td></tr>
+            <tr><td>PC</td><td class="num">~50</td><td class="num">13%</td><td>—</td></tr>
+            <tr><td>汽车/工业/消费</td><td class="num">~37</td><td class="num">10%</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout success">
+        <div class="callout-title">HBM是游戏规则改变者</div>
+        $10亿+季度营收，60%+毛利率，远超传统DRAM的30-40%。HBM正在重塑美光的盈利结构。
+      </div>
+    </section>
+
+    <!-- ══ Module 4: Moat ══ -->
+    <section class="module" id="moat">
+      <div class="module-header">
+        <div class="module-num n4">04</div>
+        <h2>经济护城河分析</h2>
+      </div>
+
+      <div class="moat-item">
+        <div class="moat-label">网络效应</div>
+        <span class="moat-rating none">无</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-secondary);padding:4px 0 8px">存储芯片是标准化产品，不存在网络效应。</p>
+
+      <div class="moat-item">
+        <div class="moat-label">转换成本</div>
+        <span class="moat-rating narrow">窄</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-secondary);padding:4px 0 8px">芯片有一定设计周期但客户可切换供应商。</p>
+
+      <div class="moat-item">
+        <div class="moat-label">成本优势</div>
+        <span class="moat-rating narrow">窄</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-secondary);padding:4px 0 8px">先进制程（1&#946;/1&#947;）和HBM3E给予暂时成本/性能优势。</p>
+
+      <div class="moat-item">
+        <div class="moat-label">无形资产</div>
+        <span class="moat-rating wide">宽</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-secondary);padding:4px 0 8px">数万项专利+45年存储技术积累+极高的技术壁垒（需数百亿美元建晶圆厂）。</p>
+
+      <div class="moat-item">
+        <div class="moat-label">有效规模</div>
+        <span class="moat-rating wide">宽</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-secondary);padding:4px 0 8px">全球DRAM只有3家（三星/SK/美光），NAND有5-6家但前3占~70%。</p>
+
+      <div class="highlight-box" style="margin-top:1rem">
+        <div class="hl-label">护城河总评</div>
+        <p><strong style="color:var(--yellow);font-size:1rem">窄偏宽护城河</strong> — 寡头垄断结构是核心。但HBM可能把"窄"变"宽"——高技术门槛+产能受限。</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem"><strong>趋势：</strong>改善中。HBM的技术壁垒远高于传统DRAM/NAND，如果AI存储需求持续，护城河有望加宽。</p>
+      </div>
+    </section>
+
+    <!-- ══ Module 5: Financials ══ -->
+    <section class="module" id="financials">
+      <div class="module-header">
+        <div class="module-num n5">05</div>
+        <h2>财务深度分析</h2>
+      </div>
+
+      <h3>年度利润表趋势（$亿）</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>指标</th><th class="num">FY2023</th><th class="num">FY2024</th><th class="num">FY2025</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>营收</td><td class="num">154</td><td class="num">251</td><td class="num">374</td></tr>
+            <tr><td>营收增速</td><td class="num" style="color:var(--red)">-49%</td><td class="num" style="color:var(--green)">+63%</td><td class="num" style="color:var(--green)">+49%</td></tr>
+            <tr><td>毛利率</td><td class="num" style="color:var(--red)">-9%</td><td class="num">22%</td><td class="num" style="color:var(--green)">41%</td></tr>
+            <tr><td>净利润</td><td class="num" style="color:var(--red)">-58</td><td class="num" style="color:var(--red)">-4</td><td class="num" style="color:var(--green)">~90</td></tr>
+            <tr><td>EPS</td><td class="num" style="color:var(--red)">-$5.34</td><td class="num" style="color:var(--red)">-$0.35</td><td class="num" style="color:var(--green)">~$8.20</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout success">
+        <div class="callout-title">AI存储产品毛利率</div>
+        HBM/AI存储产品毛利率>60%，远超传统DRAM/NAND的30-40%。这是利润率飙升的核心驱动力。
+      </div>
+
+      <h3>资产负债表健康度</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>指标</th><th class="num">数值</th><th>评价</th></tr></thead>
+          <tbody>
+            <tr><td>现金</td><td class="num">$96亿</td><td>—</td></tr>
+            <tr><td>长期债务</td><td class="num">$115亿</td><td>—</td></tr>
+            <tr><td>D/E</td><td class="num">0.21</td><td style="color:var(--green)">合理</td></tr>
+            <tr><td>流动比率</td><td class="num">2.52</td><td style="color:var(--green)">&#10004; 健康</td></tr>
+            <tr><td>ROE</td><td class="num">15.8%</td><td>恢复中</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>现金流分析</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>指标</th><th class="num">数值</th><th>评价</th></tr></thead>
+          <tbody>
+            <tr><td>经营现金流</td><td class="num">~$176亿</td><td>强劲</td></tr>
+            <tr><td>资本开支</td><td class="num">$159亿</td><td style="color:var(--red)">极高! &#9888;</td></tr>
+            <tr><td>自由现金流</td><td class="num">仅$17亿</td><td style="color:var(--red)">微薄 &#9888;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-title">$159亿资本开支——巴菲特最厌恶的资本密集型生意</div>
+        赚了$90亿利润但$159亿又投回去了。自由现金流仅$17亿，几乎全部利润都被吃掉。
+      </div>
+
+      <h3>所有者盈余计算</h3>
+      <div class="code-block">净利润                           ~$90亿
++ 折旧与摊销                      ~$85亿
+- 维护性资本开支                   ~$100亿
+─────────────────────────────────────────
+所有者盈余 ≈                       $75亿
+
+收益率 = $75亿 / $4,130亿 = 1.8% — 远低于巴菲特10%标准</div>
+
+      <h3>杜邦分析（ROE拆解）</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>组成部分</th><th class="num">数值</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>净利率</td><td class="num">~24%</td><td>周期高点水平</td></tr>
+            <tr><td>资产周转率</td><td class="num">0.55x</td><td>重资产行业</td></tr>
+            <tr><td>财务杠杆</td><td class="num">1.20x</td><td>低杠杆</td></tr>
+            <tr><td><strong>ROE</strong></td><td class="num"><strong>~15.8%</strong></td><td>恢复中，但历史上在-30%到+30%间剧烈摆动</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ══ Module 6: Earnings Call ══ -->
+    <section class="module" id="earningscall">
+      <div class="module-header">
+        <div class="module-num n6">06</div>
+        <h2>电话会分析</h2>
+      </div>
+
+      <h3>最新业绩电话会核心信息</h3>
+      <ol>
+        <li><strong>HBM3E量产顺利，HBM4样品已出货</strong> — 技术路线图按计划推进</li>
+        <li><strong>数据中心占收入56%</strong> — AI正在重塑需求结构</li>
+        <li><strong>FQ4 HBM接近$20亿季度营收</strong> — 年化$80亿，增长强劲</li>
+        <li><strong>2026年capex可能继续上升</strong> — 扩产HBM需要更多资本投入</li>
+        <li><strong>管理层称"这个周期不同于以往"</strong> — <span style="color:var(--red)">&#9888; 警告：每个周期顶部管理层都这么说</span></li>
+      </ol>
+    </section>
+
+    <!-- ══ Module 7: Valuation ══ -->
+    <section class="module" id="valuation">
+      <div class="module-header">
+        <div class="module-num n7">07</div>
+        <h2>多模型估值</h2>
+      </div>
+
+      <h3>1. 相对估值</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>公司</th><th class="num">市值</th><th class="num">PE</th><th class="num">P/S</th><th class="num">毛利率</th></tr></thead>
+          <tbody>
+            <tr><td>美光</td><td class="num">$4,130亿</td><td class="num">~46x</td><td class="num">11x</td><td class="num">41%</td></tr>
+            <tr><td>三星电子</td><td class="num">~$3,500亿</td><td class="num">~15x</td><td class="num">~2x</td><td class="num">~45%</td></tr>
+            <tr><td>SK Hynix</td><td class="num">~$1,000亿</td><td class="num">~10x</td><td class="num">~3x</td><td class="num">~50%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-title">估值溢价</div>
+        美光的PE（46x）是三大存储商中最高的。市场在为AI溢价买单。
+      </div>
+
+      <h3>2. DCF（现金流折现）</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>情景</th><th class="num">内在价值/股</th><th class="num">vs 现价</th></tr></thead>
+          <tbody>
+            <tr><td>悲观</td><td class="num">$200</td><td class="num" style="color:var(--red)">-47%</td></tr>
+            <tr><td><strong>基准</strong></td><td class="num"><strong>$450</strong></td><td class="num" style="color:var(--green)"><strong>+19%</strong></td></tr>
+            <tr><td>乐观</td><td class="num">$550</td><td class="num" style="color:var(--green)">+46%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-title">反向DCF</div>
+        当前$377隐含未来5年EPS年增15%——在周期性行业中这是一个非常乐观的假设。
+      </div>
+
+      <div class="highlight-box">
+        <div class="hl-label">加权合理价值</div>
+        <p style="font-size:1.3rem;font-weight:700;color:var(--heading);font-family:'JetBrains Mono',monospace">$350 — $500 / 股 &nbsp; 中位~$420</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem">当前价$377.58 &#8594; <strong style="color:var(--yellow)">安全边际约 0-10%——不够</strong></p>
+      </div>
+
+      <h3>3. PEG估值</h3>
+      <p>46x PE / 预期增长30% = <strong>PEG 1.5</strong> — 偏贵。PEG&gt;1.2通常意味着市场对增长的定价已较为充分。</p>
+
+      <h3>4. SOTP（分部加总）</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>业务板块</th><th>估值方法</th><th class="num">估值($亿)</th></tr></thead>
+          <tbody>
+            <tr><td>DRAM传统</td><td>15x 利润</td><td class="num">~1,200</td></tr>
+            <tr><td>HBM</td><td>25x 利润</td><td class="num">~1,500</td></tr>
+            <tr><td>NAND</td><td>10x 利润</td><td class="num">~400</td></tr>
+            <tr><td><strong>SOTP总计</strong></td><td></td><td class="num"><strong>~3,100</strong></td></tr>
+            <tr><td>每股价值</td><td></td><td class="num"><strong>~$283</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-title">SOTP警告</div>
+        SOTP仅$283 vs 当前$377——市场在为未来的增长预期付费。如果AI周期比预期短或DRAM价格回落，下行风险巨大。
+      </div>
+    </section>
+
+    <!-- ══ Module 8: Competition ══ -->
+    <section class="module" id="competition">
+      <div class="module-header">
+        <div class="module-num n8">08</div>
+        <h2>竞争与行业分析</h2>
+      </div>
+
+      <h3>DRAM寡头格局</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>公司</th><th class="num">DRAM份额</th><th class="num">HBM份额</th></tr></thead>
+          <tbody>
+            <tr><td>Samsung</td><td class="num">~40%</td><td class="num">22%</td></tr>
+            <tr><td>SK Hynix</td><td class="num">~30%</td><td class="num" style="color:var(--green)">57%</td></tr>
+            <tr><td>Micron</td><td class="num">~25%</td><td class="num">21%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>波特五力分析</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>力量</th><th>强度</th><th>分析</th></tr></thead>
+          <tbody>
+            <tr><td>供应商议价力</td><td>中</td><td>设备商ASML等具有较强议价力</td></tr>
+            <tr><td>买方议价力</td><td>中</td><td>大客户如NVIDIA集中度高</td></tr>
+            <tr><td>替代品威胁</td><td style="color:var(--green)">低 &#10004;</td><td>DRAM/HBM暂无有效替代方案</td></tr>
+            <tr><td>新进入者威胁</td><td style="color:var(--green)">极低 &#10004;</td><td>$100亿+建厂门槛，技术壁垒极高</td></tr>
+            <tr><td>行业内竞争</td><td style="color:var(--yellow)">中</td><td>寡头格局但历史上存在周期性价格战</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ══ Module 9: Technical ══ -->
+    <section class="module" id="technical">
+      <div class="module-header">
+        <div class="module-num n9">09</div>
+        <h2>技术面分析</h2>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-title">注意</div>
+        巴菲特本人不使用技术分析。本节作为完整性补充，供交易型投资者参考。
+      </div>
+
+      <h3>关键支撑与阻力位</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>类型</th><th class="num">价位</th><th>依据</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--green)">支撑</td><td class="num">$280</td><td>FY2025均价区间</td></tr>
+            <tr><td style="color:var(--green)">强支撑</td><td class="num">$200</td><td>前低支撑</td></tr>
+            <tr><td style="color:var(--red)">阻力</td><td class="num">$420</td><td>前期平台阻力</td></tr>
+            <tr><td style="color:var(--red)">强阻力</td><td class="num">$470</td><td>52周最高点附近</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>股价从$471高点回落至$377，处于阶段性调整中。若跌破$280可能开启更深调整。</p>
+    </section>
+
+    <!-- ══ Module 10: Catalysts ══ -->
+    <section class="module" id="catalysts">
+      <div class="module-header">
+        <div class="module-num n10">10</div>
+        <h2>增长催化剂与前景展望</h2>
+      </div>
+
+      <h3>正面催化剂</h3>
+      <ul>
+        <li><strong>HBM4量产</strong> — 下一代高带宽内存，技术领先带来更高毛利</li>
+        <li><strong>AI capex持续增长</strong> — 云厂商资本开支持续加码，利好HBM需求</li>
+        <li><strong>NVIDIA下一代GPU需求</strong> — Blackwell/Rubin架构需要更多HBM</li>
+        <li><strong>存储价格走势</strong> — DRAM供需紧平衡支撑ASP</li>
+      </ul>
+
+      <h3>风险催化剂</h3>
+      <div class="callout warning">
+        <div class="callout-title">周期下行风险</div>
+        DRAM/NAND价格见顶 &#8594; 周期下行 &#8594; 利润可能再次大幅下滑。这是存储行业45年来反复上演的剧本。
+      </div>
+    </section>
+
+    <!-- ══ Module 11: Risk ══ -->
+    <section class="module" id="risk">
+      <div class="module-header">
+        <div class="module-num n11">11</div>
+        <h2>风险矩阵</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>风险类型</th><th class="num">评分(1-5)</th><th>具体风险</th></tr></thead>
+          <tbody>
+            <tr><td>经营风险</td><td class="num">3</td><td>HBM良率和技术迭代风险</td></tr>
+            <tr><td>财务风险</td><td class="num">2</td><td>D/E 0.21合理，但capex极高</td></tr>
+            <tr><td>竞争风险</td><td class="num">3</td><td>SK Hynix在HBM领域领先</td></tr>
+            <tr><td>监管风险</td><td class="num">2</td><td>中国市场准入受限</td></tr>
+            <tr><td>宏观风险</td><td class="num" style="color:var(--red)">4 &#9888;</td><td>周期性极强！存储价格波动剧烈</td></tr>
+            <tr><td>估值风险</td><td class="num" style="color:var(--red)">4 &#9888;</td><td>46x PE定价已包含大量乐观预期</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout danger" style="margin-top:1rem">
+        <div class="callout-title">黑天鹅情景</div>
+        <strong>最坏情况：</strong>AI支出大幅削减 + DRAM价格暴跌50% + 中国制裁 &#8594; 营收腰斩 &#8594; 净利润转亏 &#8594; <strong style="color:var(--red)">$120</strong>（从当前$377下跌约68%）
+      </div>
+    </section>
+
+    <!-- ══ Module 12: Scorecard ══ -->
+    <section class="module" id="scorecard">
+      <div class="module-header">
+        <div class="module-num n12">12</div>
+        <h2>巴菲特计分卡与投资决策</h2>
+      </div>
+
+      <h3>巴菲特计分卡（满分36分）</h3>
+      <div class="scorecard-grid">
+        <div class="score-row"><span class="criteria">业务是否易于理解</span><div class="dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><span class="score">2/3</span></div>
+        <div class="score-row"><span class="criteria">经营历史是否一致</span><div class="dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div><span class="score">1/3</span></div>
+        <div class="score-row"><span class="criteria">长期前景是否良好</span><div class="dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div><span class="score">3/3</span></div>
+        <div class="score-row"><span class="criteria">管理层坦诚与理性</span><div class="dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><span class="score">2/3</span></div>
+        <div class="score-row"><span class="criteria">主人翁经营心态</span><div class="dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div><span class="score">1/3</span></div>
+        <div class="score-row"><span class="criteria">高ROE低负债</span><div class="dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><span class="score">2/3</span></div>
+        <div class="score-row"><span class="criteria">强劲自由现金流</span><div class="dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div><span class="score">1/3</span></div>
+        <div class="score-row"><span class="criteria">宽广经济护城河</span><div class="dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><span class="score">2/3</span></div>
+        <div class="score-row"><span class="criteria">保守会计处理</span><div class="dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><span class="score">2/3</span></div>
+        <div class="score-row"><span class="criteria">存在安全边际</span><div class="dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div><span class="score">1/3</span></div>
+        <div class="score-row"><span class="criteria">定价能力（抗通胀）</span><div class="dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div><span class="score">1/3</span></div>
+        <div class="score-row"><span class="criteria">低资本再投入需求</span><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><span class="score">0/3</span></div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px;margin:1.5rem 0;padding:1rem;background:var(--bg-alt);border-radius:var(--radius)">
+        <div class="grade-badge c">C</div>
+        <div>
+          <div style="font-weight:700;color:var(--heading);font-size:1.1rem">总分 18/36 — 一般</div>
+          <div style="font-size:0.82rem;color:var(--text-secondary)">A(30-36) 杰出 &middot; B(24-29) 优秀 &middot; C(18-23) 一般 &middot; D(12-17) 令人担忧</div>
+        </div>
+      </div>
+
+      <!-- ── Investment Decision ── -->
+      <h3>投资决策</h3>
+
+      <div class="decision-box">
+        <div class="decision-header">
+          <div class="decision-rating">持有</div>
+          <div class="decision-price">
+            <div class="current">$377.58</div>
+            <div class="target">加权目标价 <strong>$450</strong> &nbsp; | &nbsp; 潜在回报 <strong style="color:var(--yellow)">+19%</strong> &nbsp; 风险：周期性+估值偏高</div>
+          </div>
+        </div>
+
+        <h3>12个月目标价</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>情景</th><th class="num">目标价</th><th class="num">概率</th><th>逻辑</th></tr></thead>
+            <tbody>
+              <tr><td>乐观</td><td class="num" style="color:var(--green)">$550</td><td class="num">25%</td><td>AI超级周期延续 + HBM4放量</td></tr>
+              <tr><td><strong>基准</strong></td><td class="num"><strong>$450</strong></td><td class="num"><strong>45%</strong></td><td>HBM持续增长 + DRAM价格温和</td></tr>
+              <tr><td>悲观</td><td class="num" style="color:var(--red)">$200</td><td class="num">30%</td><td>DRAM价格暴跌 + AI周期见顶</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>分批建仓策略</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>建仓</th><th class="num">价位</th><th class="num">仓位占比</th></tr></thead>
+            <tbody>
+              <tr><td>首仓</td><td class="num">$280 — $350</td><td class="num">50%</td></tr>
+              <tr><td>二仓</td><td class="num">$200 — $280</td><td class="num">50%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>止盈止损策略</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>操作</th><th class="num">价位</th><th>说明</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--green)">止盈1</td><td class="num">$450 — $500</td><td>减仓一半</td></tr>
+              <tr><td style="color:var(--green)">止盈2</td><td class="num">$550+</td><td>清仓</td></tr>
+              <tr><td style="color:var(--red)">止损位</td><td class="num">$180</td><td>基本面严重恶化时止损</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>仓位管理</h3>
+        <ul>
+          <li><strong>建议仓位：</strong>占投资组合的3-5%（周期性标的，不宜重仓）</li>
+          <li><strong>建议持有周期：</strong>中期1-2年（周期交易）</li>
+          <li><strong>适合投资者：</strong>能承受大幅波动、理解半导体周期的成长型投资者</li>
+        </ul>
+
+        <h3>关键监控指标</h3>
+        <ol>
+          <li>DRAM/NAND ASP（平均售价）走势</li>
+          <li>HBM出货量和市场份额</li>
+          <li>AI capex趋势（NVIDIA、云厂商资本开支）</li>
+          <li>库存天数</li>
+          <li>毛利率变化</li>
+        </ol>
+
+        <h3>事件时间表</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>时间</th><th>事件</th></tr></thead>
+            <tbody>
+              <tr><td>2026年~6月</td><td>FQ3 2026业绩</td></tr>
+              <tr><td>2026年~9月</td><td>FQ4 2026业绩</td></tr>
+              <tr><td>2026年下半年</td><td>HBM4量产时间节点</td></tr>
+              <tr><td>持续关注</td><td>NVIDIA新GPU发布时间</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="callout warning" style="margin-top:1.5rem">
+        <div class="callout-title">巴菲特的忠告</div>
+        巴菲特在1999年说过："如果我教投资课，我会教的第一件事就是如何给一家公司估值，第二件事就是如何思考市场的周期性。"美光正处于周期顶部附近——这不是建仓的理想时机。
+      </div>
+
+    </section>
+
+    <!-- ══ Disclaimer ══ -->
+    <div class="disclaimer">
+      <strong>免责声明：</strong>本分析仅供教育和研究用途，不构成投资建议。"巴菲特"视角是一个受沃伦·巴菲特公开表述的投资原则启发的分析框架——它并不代表沃伦·巴菲特本人对任何具体公司的观点。所有投资都有风险，请在做出投资决策前咨询合格的财务顾问。
+    </div>
+
+    <!-- ══ Footer ══ -->
+    <footer class="page-footer">
+      <p>Generated by <strong>巴菲特神谕分析师</strong> &middot; <a href="https://github.com/JaceXie" target="_blank" rel="noopener">@JaceXie</a></p>
+      <p style="margin-top:4px">分析日期：2026-04-08 &middot; NASDAQ: MU</p>
+    </footer>
+
+  </main>
+</div>
+
+<!-- ══ Back to Top ══ -->
+<button class="back-to-top" id="backToTop" title="回到顶部" aria-label="Back to top">&#8593;</button>
+
+<!-- ═══════════════════════════════
+     Scripts
+     ═══════════════════════════════ -->
+<script>
+(function() {
+  // ── Theme Toggle ──
+  const html = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+
+  const saved = localStorage.getItem('micron-theme');
+  if (saved) {
+    html.setAttribute('data-theme', saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    html.setAttribute('data-theme', 'dark');
+  }
+
+  function updateIcon() {
+    icon.innerHTML = html.getAttribute('data-theme') === 'dark' ? '&#9788;' : '&#9790;';
+  }
+  updateIcon();
+
+  toggle.addEventListener('click', function() {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('micron-theme', next);
+    updateIcon();
+  });
+
+  // ── Sidebar Active State ──
+  const sections = document.querySelectorAll('.module, .verdict, .hero, .decision-summary');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+  function updateActive() {
+    let current = '';
+    sections.forEach(function(section) {
+      const top = section.offsetTop - 100;
+      if (window.scrollY >= top) {
+        current = section.id;
+      }
+    });
+    navLinks.forEach(function(link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // ── Back to Top ──
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Smooth scroll for sidebar ──
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
