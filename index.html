@@ -446,7 +446,7 @@ body {
 .decision-summary {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--yellow);
+  border-left: 4px solid var(--red);
   border-radius: var(--radius-lg);
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
@@ -809,7 +809,7 @@ th.num { text-align: right; }
 
 .decision-box {
   background: var(--surface);
-  border: 2px solid var(--yellow);
+  border: 2px solid var(--red);
   border-radius: var(--radius-lg);
   padding: 2rem;
   margin: 1.5rem 0;
@@ -828,8 +828,8 @@ th.num { text-align: right; }
   font-weight: 700;
   padding: 8px 20px;
   border-radius: var(--radius);
-  background: var(--yellow-bg);
-  color: var(--yellow);
+  background: var(--red-bg);
+  color: var(--red);
 }
 
 .decision-price {
@@ -1031,7 +1031,7 @@ th.num { text-align: right; }
         </div>
         <div class="hero-stat">
           <div class="label">评级</div>
-          <div class="value"><span class="badge hold" style="background:var(--badge-hold-bg);color:var(--badge-hold-text)">持有</span></div>
+          <div class="value"><span class="badge sell" style="background:var(--badge-sell-bg);color:var(--badge-sell-text)">卖出</span></div>
         </div>
       </div>
     </section>
@@ -1048,19 +1048,19 @@ th.num { text-align: right; }
       <div class="ds-grid">
         <div class="ds-item">
           <div class="ds-label">评级</div>
-          <div class="ds-value yellow"><span class="badge hold">持有</span></div>
+          <div class="ds-value" style="color:var(--red)"><span class="badge sell">卖出</span></div>
         </div>
         <div class="ds-item">
           <div class="ds-label">计分</div>
           <div class="ds-value">C 18/36</div>
         </div>
         <div class="ds-item">
-          <div class="ds-label">加权目标价</div>
-          <div class="ds-value">$450 <span style="font-size:0.78rem;font-weight:400">(+19%)</span></div>
+          <div class="ds-label">中周期目标价</div>
+          <div class="ds-value">$185 <span style="font-size:0.78rem;font-weight:400">(-51%)</span></div>
         </div>
         <div class="ds-item">
-          <div class="ds-label">首仓区间</div>
-          <div class="ds-value">$300-370</div>
+          <div class="ds-label">首仓价格</div>
+          <div class="ds-value">$140</div>
         </div>
         <div class="ds-item">
           <div class="ds-label">股息率</div>
@@ -1068,10 +1068,10 @@ th.num { text-align: right; }
         </div>
         <div class="ds-item">
           <div class="ds-label">安全边际</div>
-          <div class="ds-value">不确定</div>
+          <div class="ds-value" style="color:var(--red)">严重不足</div>
         </div>
       </div>
-      <div class="ds-scenarios">12个月情景：乐观 $550 (25%) &middot; 基准 $450 (45%) &middot; 悲观 $200 (30%)</div>
+      <div class="ds-scenarios">中周期合理区间：$120-250（mid-cycle EPS $7-12 @ 15x，含HBM结构性溢价）</div>
     </section>
 
     <!-- ══ Module 1: Overview ══ -->
@@ -1358,7 +1358,7 @@ th.num { text-align: right; }
         美光的PE（46x）是三大存储商中最高的。市场在为AI溢价买单。
       </div>
 
-      <h3>2. DCF（现金流折现）</h3>
+      <h3>2. DCF（现金流折现）— 峰值EPS基础</h3>
       <div class="table-wrapper">
         <table>
           <thead><tr><th>情景</th><th class="num">内在价值/股</th><th class="num">vs 现价</th></tr></thead>
@@ -1370,15 +1370,16 @@ th.num { text-align: right; }
         </table>
       </div>
 
-      <div class="callout warning">
-        <div class="callout-title">反向DCF</div>
-        当前$377隐含未来5年EPS年增15%——在周期性行业中这是一个非常乐观的假设。
+      <div class="callout danger">
+        <div class="callout-title">DCF严重失真警告</div>
+        上述DCF基于FY2025峰值EPS $8.29外推——这是<strong>周期顶部</strong>盈利，非正常化水平。Mid-cycle EPS仅$7-12，以15x中周期PE计算，合理价值$105-180。当前$377隐含未来5年EPS年增15%——在周期性行业中这是一个极度乐观的假设。
       </div>
 
       <div class="highlight-box">
-        <div class="hl-label">加权合理价值</div>
-        <p style="font-size:1.3rem;font-weight:700;color:var(--heading);font-family:'JetBrains Mono',monospace">$350 — $500 / 股 &nbsp; 中位~$420</p>
-        <p style="margin-top:0.5rem;font-size:0.85rem">当前价$377.58 &#8594; <strong style="color:var(--yellow)">安全边际约 0-10%——不够</strong></p>
+        <div class="hl-label">中周期合理价值（修正）</div>
+        <p style="font-size:1.3rem;font-weight:700;color:var(--heading);font-family:'JetBrains Mono',monospace">$120 — $250 / 股 &nbsp; 中位~$185</p>
+        <p style="margin-top:0.5rem;font-size:0.85rem">当前价$377.58 &#8594; <strong style="color:var(--red)">高估50-70%——FY2025 EPS $8.29是周期峰值，非正常化盈利</strong></p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--text-secondary)">Mid-cycle EPS $7-12 &times; 15x = $105-180；含HBM结构性溢价 = $150-250</p>
       </div>
 
       <h3>3. PEG估值</h3>
@@ -1550,21 +1551,21 @@ th.num { text-align: right; }
 
       <div class="decision-box">
         <div class="decision-header">
-          <div class="decision-rating">持有</div>
+          <div class="decision-rating" style="background:var(--red-bg);color:var(--red)">卖出</div>
           <div class="decision-price">
             <div class="current">$377.58</div>
-            <div class="target">加权目标价 <strong>$450</strong> &nbsp; | &nbsp; 潜在回报 <strong style="color:var(--yellow)">+19%</strong> &nbsp; 风险：周期性+估值偏高</div>
+            <div class="target">中周期目标价 <strong>$185</strong> &nbsp; | &nbsp; 潜在下行 <strong style="color:var(--red)">-51%</strong> &nbsp; FY2025 EPS是周期峰值</div>
           </div>
         </div>
 
-        <h3>12个月目标价</h3>
+        <h3>中周期合理价值区间</h3>
         <div class="table-wrapper">
           <table>
             <thead><tr><th>情景</th><th class="num">目标价</th><th class="num">概率</th><th>逻辑</th></tr></thead>
             <tbody>
-              <tr><td>乐观</td><td class="num" style="color:var(--green)">$550</td><td class="num">25%</td><td>AI超级周期延续 + HBM4放量</td></tr>
-              <tr><td><strong>基准</strong></td><td class="num"><strong>$450</strong></td><td class="num"><strong>45%</strong></td><td>HBM持续增长 + DRAM价格温和</td></tr>
-              <tr><td>悲观</td><td class="num" style="color:var(--red)">$200</td><td class="num">30%</td><td>DRAM价格暴跌 + AI周期见顶</td></tr>
+              <tr><td>乐观</td><td class="num" style="color:var(--green)">$250</td><td class="num">20%</td><td>HBM结构性需求持续 + mid-cycle EPS $12</td></tr>
+              <tr><td><strong>基准</strong></td><td class="num"><strong>$185</strong></td><td class="num"><strong>50%</strong></td><td>Mid-cycle EPS ~$9 @ 20x（含HBM溢价）</td></tr>
+              <tr><td>悲观</td><td class="num" style="color:var(--red)">$120</td><td class="num">30%</td><td>DRAM价格回归 + mid-cycle EPS $7 @ 15x</td></tr>
             </tbody>
           </table>
         </div>
@@ -1574,20 +1575,20 @@ th.num { text-align: right; }
           <table>
             <thead><tr><th>建仓</th><th class="num">价位</th><th class="num">仓位占比</th></tr></thead>
             <tbody>
-              <tr><td>首仓</td><td class="num">$300 — $370</td><td class="num">50%</td></tr>
-              <tr><td>二仓</td><td class="num">$240 — $300</td><td class="num">50%</td></tr>
+              <tr><td>首仓</td><td class="num">$140</td><td class="num">50%</td></tr>
+              <tr><td>二仓</td><td class="num">$120</td><td class="num">50%</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h3>止盈止损策略</h3>
+        <h3>止盈策略</h3>
         <div class="table-wrapper">
           <table>
             <thead><tr><th>操作</th><th class="num">价位</th><th>说明</th></tr></thead>
             <tbody>
-              <tr><td style="color:var(--green)">止盈1</td><td class="num">$450 — $500</td><td>减仓一半</td></tr>
-              <tr><td style="color:var(--green)">止盈2</td><td class="num">$550+</td><td>清仓</td></tr>
-              <tr><td style="color:var(--red)">止损位</td><td class="num">$180</td><td>基本面严重恶化时止损</td></tr>
+              <tr><td style="color:var(--green)">止盈①</td><td class="num">$185</td><td>减仓30%</td></tr>
+              <tr><td style="color:var(--green)">止盈②</td><td class="num">$220</td><td>减仓30%</td></tr>
+              <tr><td style="color:var(--green)">止盈③</td><td class="num">$250</td><td>清仓</td></tr>
             </tbody>
           </table>
         </div>
